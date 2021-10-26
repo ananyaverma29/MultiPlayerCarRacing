@@ -1,0 +1,49 @@
+class Game{
+    constructor(uniquekey, numberOfPlayers){
+        this.uniquekey = uniquekey;
+        this.numberOfPlayers = numberOfPlayers;
+    }
+
+    getInfo(){
+
+
+        path = "friends/"+this.numberOfPlayers+"/"+uniquekey    
+        /*
+    uniqueKey {
+            gameState:  1,
+            player1:{
+                name:"a",
+                positionX:457,
+                positionY:490
+            },
+            player2:{
+                name:"a",
+                positionX:457,
+                positionY:490
+            },
+            playerCount:2
+
+    }
+
+
+
+        */
+
+        database.ref(path).once("value", (data)=>{
+            info = data.val()
+            //   info.gameState  // 1
+            //info.playerCount   // 2
+            // xPos1 =  info.player1.positionX
+            // yPos1 =  info.player1.positionY
+             // xPos2 =  info.player2.positionX
+            // yPos2 =  info.player2.positionY
+
+            car1 = createSprite(xPos1, yPos1)
+
+            car2 = createSprite(xPos, yPos)
+
+            
+        });
+
+    }
+}
